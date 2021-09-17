@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="smena" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rieltorag.ZajavkiController">
+   <children>
+      <BorderPane layoutX="-1.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                  <Menu mnemonicParsing="false" text="Мой аккаунт">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#statistikuposmotrerAction" text="Посмотреть статистику по моему аккаунту" />
+                        <MenuItem mnemonicParsing="false" onAction="#smenaP" text="Сменить пользователя" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Меню">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#statistikazajavok" text="Посмотреть количество объявлений в базе приложения" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Подать объявление">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addOb" text="Заполнить анкету и отправить объявление на редактирование и проверку" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Подать заявку на подбор">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addZa" text="Заполнить анкету и отправить заявку" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Помощь">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#opril" text="О приложении" />
+                        <MenuItem mnemonicParsing="false" onAction="#pomoch" text="Открыть файл с юридической консультацией сделок по аренде недвижимости" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Данное приложение создано студентом Шакуров Идрисом Фаридовичем и не предназначено для коммерческого использования" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab fx:id="catalogtab" text="Мой аккаунт">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: b1b1b3;">
+                           <children>
+                              <SplitPane dividerPositions="0.49445983379501385" layoutY="-2.0" prefHeight="338.0" prefWidth="724.0" style="-fx-background-color: #b1b1b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane fx:id="archorPane" minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="430.0" style="-fx-background-color: #pane{    -fx-background-image: url(&quot;serui.jpg&quot;);    -fx-background-repeat: stretch;       -fx-background-size: 900 506;    -fx-background-position: center center;    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); };">
+                                       <children>
+                                          <SplitPane dividerPositions="0.48863636363636365" layoutY="8.0" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: b1b1b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <TableView fx:id="catalogeTable2" layoutY="7.0" prefHeight="200.0" prefWidth="170.0" stylesheets="@osnova.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                            <TableColumn fx:id="variantiID2" prefWidth="170.0" text="Избранные объявления" />
+                                                          <TableColumn prefWidth="55.0" text="Артикул" />
+                                                          <TableColumn fx:id="variantikomnat2" minWidth="0.0" prefWidth="0.0" text="Количество комнат" />
+                                                            <TableColumn fx:id="variantistoim2" prefWidth="75.0" text="Цена аренды(р/м)" />
+                                                            <TableColumn fx:id="adres2" prefWidth="75.0" text="Адрес" />
+                                                            <TableColumn fx:id="infa2" prefWidth="75.0" text="Тип объекта" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="242.0" style="-fx-background-color: #b1b1b3;">
+                                                   <children>
+                                                      <GridPane layoutY="28.0" prefHeight="247.0" prefWidth="177.0" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="Артикул:" />
+                                                            <Label text="Кол-во комнат:" GridPane.rowIndex="1" />
+                                                            <Label prefHeight="17.0" prefWidth="86.0" text="Цена аренды(р/м)" GridPane.rowIndex="2" />
+                                                            <Label text="Город" GridPane.rowIndex="3" />
+                                                            <Label text="Тип объекта:" GridPane.rowIndex="4" />
+                                                            <Label fx:id="variantiIDLabel2" prefHeight="17.0" prefWidth="102.0" text="Label" GridPane.columnIndex="1" />
+                                                            <Label fx:id="variantikomnatLabel2" prefHeight="17.0" prefWidth="86.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <Label fx:id="variantistoimLabel2" prefHeight="17.0" prefWidth="89.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <Label fx:id="adresLabel2" prefHeight="17.0" prefWidth="89.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <Label fx:id="infaLabel2" prefHeight="23.0" prefWidth="89.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                         </children>
+                                                      </GridPane>
+                                                      <Text layoutX="3.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Детальная информация" wrappingWidth="176.13671875" AnchorPane.bottomAnchor="317.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                      <Button layoutY="279.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #8f8f8f;" stylesheets="@back.css" text="Удалить из избранных" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children></AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="327.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.525" layoutY="8.0" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: b1b1b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                   <children>
+                                                      <TableView fx:id="catalogeTable3" layoutY="16.0" prefHeight="318.0" prefWidth="186.0" stylesheets="@osnova.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="16.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="zGorod" prefWidth="56.0" text="Город" />
+                                                          <TableColumn fx:id="zKomnat" prefWidth="60.0" text="Кол-во комнат" />
+                                                            <TableColumn fx:id="zRajon" prefWidth="109.0" text="Тип объекта" />
+                                                            <TableColumn fx:id="zPloshad" prefWidth="75.0" text="Общая площадь" />
+                                                            <TableColumn fx:id="zArenda" prefWidth="75.0" text="Арендная плата" />
+                                                        </columns>
+                                                      </TableView>
+                                                      <Text layoutX="-38.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="                 Мои заявки" wrappingWidth="187.13671875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="116.0" prefWidth="12.0">
+                                                   <children>
+                                                      <GridPane layoutX="-32.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="201.0" prefWidth="168.0" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="16.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="Город:" />
+                                                            <Label text="Общая площадь:" GridPane.rowIndex="1" />
+                                                            <Label text="Тип объекта:" GridPane.rowIndex="2" />
+                                                            <Label text="Общая площадь" GridPane.rowIndex="3" />
+                                                            <Label text="Арендная плата" GridPane.rowIndex="4" />
+                                                            <Label fx:id="zGorodLabel" text="Label" GridPane.columnIndex="1" />
+                                                            <Label fx:id="zKomnatLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <Label fx:id="zRajonLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <Label fx:id="zPloshadLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <Label fx:id="zArendaLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                         </children>
+                                                      </GridPane>
+                                                      <Text layoutX="46.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Суть заявки:" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                      <Button layoutX="8.0" layoutY="224.0" mnemonicParsing="false" onAction="#poiskgoroda" style="-fx-background-color: #8f8f8f;" stylesheets="@back.css" text="Поиск по городу" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                      <Button layoutY="249.0" mnemonicParsing="false" onAction="#poiskPloshadi" style="-fx-background-color: #8f8f8f;" stylesheets="@back.css" text="Поиск по площади" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                      <Button layoutY="274.0" mnemonicParsing="false" onAction="#poiskobjekta" style="-fx-background-color: #8f8f8f;" stylesheets="@back.css" text="Поиск по типу объекта" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                      <Button layoutY="299.0" mnemonicParsing="false" onAction="#poiskstoimosti" style="-fx-background-color: #8f8f8f;" stylesheets="@back.css" text="Поиск по арендной плате" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children></AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Каталог">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5457063711911357" prefHeight="332.0" prefWidth="724.0" style="-fx-background-color: b1b1b3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <TableView fx:id="catalogeTable" layoutX="8.0" prefHeight="330.0" prefWidth="393.0" stylesheets="@osnova.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="variantiID" prefWidth="96.0" text="№ объявления" />
+                                                <TableColumn fx:id="variantikomnat" prefWidth="100.0" text="Общая площадь" />
+                                              <TableColumn fx:id="variantistoim" prefWidth="117.0" text="Цена аренды(р/м)" />
+                                                <TableColumn fx:id="adres" prefWidth="69.0" text="Город" />
+                                                <TableColumn fx:id="infa" minWidth="3.0" prefWidth="119.0" text="Тип объекта:" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="254.0">
+                                       <children>
+                                          <GridPane layoutY="34.0" prefHeight="221.0" prefWidth="325.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label prefHeight="58.0" prefWidth="169.0" text="№ объявления:" />
+                                                <Label prefHeight="63.0" prefWidth="163.0" text="Общая площадь:" GridPane.rowIndex="1" />
+                                                <Label prefHeight="63.0" prefWidth="176.0" text="Цена аренды(р/м):" GridPane.rowIndex="2" />
+                                                <Label fx:id="variantiIDLabel" prefHeight="75.0" prefWidth="183.0" text="Информация" GridPane.columnIndex="1" />
+                                                <Label fx:id="variantikomnatLabel" prefHeight="70.0" prefWidth="187.0" text="Информация" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label fx:id="variantistoimLabel" prefHeight="64.0" prefWidth="162.0" text="Информация" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label prefHeight="56.0" prefWidth="164.0" text="Город:" GridPane.rowIndex="3" />
+                                                <Label fx:id="adresLabel" prefHeight="57.0" prefWidth="164.0" text="Информация" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="Тип объекта:" GridPane.rowIndex="4" />
+                                                <Label fx:id="infaLabel" text="Информация" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                          </GridPane>
+                                          <Label layoutY="-4.0" prefHeight="27.0" prefWidth="326.0" style="-fx-font-weight: bold;" text="               Детальное содержание объявления " AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-4.0" />
+                                          <Button layoutY="300.0" mnemonicParsing="false" onAction="#vIz" prefHeight="33.0" prefWidth="325.0" style="-fx-background-color: #8f8f8f;" text="Добавить объявление в избранные" />
+                                          <Button layoutY="275.0" mnemonicParsing="false" onAction="#deleteob" prefHeight="25.0" prefWidth="326.0" style="-fx-background-color: #8f8f8f;" text="Удалить объявление" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

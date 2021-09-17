@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="pane" fx:id="Label2" prefHeight="400.0" prefWidth="600.0" stylesheets="@vhod.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rieltorag.DobavObController">
+   <children>
+      <TextField fx:id="TextFieldO1" layoutX="300.0" layoutY="60.0" />
+      <TextField fx:id="TextFieldO2" layoutX="300.0" layoutY="100.0" />
+      <TextField fx:id="TextFieldO3" layoutX="300.0" layoutY="142.0" />
+      <TextField fx:id="TextFieldO4" layoutX="300.0" layoutY="181.0" />
+      <TextField fx:id="TextFieldO5" layoutX="300.0" layoutY="224.0" />
+      <Label fx:id="LabelO1" layoutX="109.0" layoutY="64.0" style="-fx-font-weight: bold;" text="Артикул:" />
+      <Label fx:id="LabelO2" layoutX="109.0" layoutY="104.0" style="-fx-font-weight: bold;" text="Общая площадь:" />
+      <Label fx:id="LabelO3" layoutX="109.0" layoutY="146.0" style="-fx-font-weight: bold;" text="Арендная плата:" />
+      <Label fx:id="LabelO4" layoutX="109.0" layoutY="185.0" style="-fx-font-weight: bold;" text="Город:" />
+      <Label fx:id="LabelO5" layoutX="109.0" layoutY="228.0" style="-fx-font-weight: bold;" text="Тип объекта:" />
+      <Button fx:id="buttonO1" layoutX="192.0" layoutY="295.0" mnemonicParsing="false" onAction="#dobavO" style="-fx-background-color: #d4d2d2; -fx-text-fill: black;" text="Подать объявление" />
+      <Button layoutX="329.0" layoutY="295.0" mnemonicParsing="false" onAction="#chistka" style="-fx-background-color: #d4d2d2; -fx-text-fill: black;" text="Очистить" />
+      <Label layoutX="185.0" prefHeight="51.0" prefWidth="231.0" style="-fx-font-family: Academia;" stylesheets="@lock.css" text="Риэлторское агентство" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
